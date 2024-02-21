@@ -7,6 +7,7 @@ def infinite(args):
         sum += int(a)
     print(sum)
 
+
 if __name__ == "__main__":
     import sys
     infinite(sys.argv)

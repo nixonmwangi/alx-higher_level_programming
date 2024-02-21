@@ -8,5 +8,6 @@ def print_hidden():
         if(i[:2] != "__"):
             print(i)
 
+
 if __name__ == "__main__":
     print_hidden()
