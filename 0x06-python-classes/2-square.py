@@ -1,27 +1,13 @@
 #!/usr/bin/python3
+""" creates class Square """
 
 
-import math
-
-
-class MagicClass():
-    """Defines a MagicClass object."""
-
-    def __init__(self, radius=0):
-        """Sets the necessary attributes for the MagicClass object.
-
-        Args:
-            radius (int, float): the radius of the circle
-        """
-        self.__radius = 0
-        if type(radius) is not int and type(radius) is not float:
-            raise TypeError("radius must be a number")
-        self.__radius = radius
-
-    def area(self):
-        """Returns the current circle area."""
-        return self.__radius ** 2 * math.pi
-
-    def circumference(self):
-        """Returns the current circle circumference."""
-        return 2 * math.pi * self.__radius
+class Square:
+    """ Square class"""
+    def __init__(self, size=0):
+        if type(size) != int:
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size
