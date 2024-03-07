@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""MagicClass module.
+
+This module contains the MagicClass class used for the bytecode exercise.
+"""
+
+
 import math
 
 
