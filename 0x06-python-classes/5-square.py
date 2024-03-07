@@ -1,37 +1,48 @@
 #!/usr/bin/python3
-""" creates class Square """
+"""Square module.
+
+This module contains a class that defines a square and its size and checking
+if the given values are right, and a setter and getter methods to set or get
+it. There's also an area method that returns the area of the square, another
+one that handles the print of the square.
+
+"""
 
 
-class Square:
-    """ Square class"""
+class Square():
+    """Defines a square."""
+
     def __init__(self, size=0):
-        if type(size) != int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
+        """Sets the necessary attributes for the Square object.
+
+        Args:
+            size (int): the size of one edge of the square.
+        """
+        self.size = size
 
     @property
     def size(self):
+        """Get or set the size of the square."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        if type(value) != int:
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
+        if type(value) is int:
+            if value >= 0:
+                self.__size = value
+            else:
+                raise ValueError("size must be >= 0")
         else:
-            self.__size = value
+            raise TypeError("size must be an integer")
 
     def area(self):
-        return self.__size * self.__size
+        """Returns the current square area."""
+        return self.__size ** 2
 
     def my_print(self):
-        if self.__size == 0:
-            print('')
-        for s in range(self.__size):
-            for os in range(self.__size):
-                print('#', end='')
-            print('')
+        """Prints the square with the # character on stdout."""
+        if self.__size > 0:
+            for x in range(self.__size):
+                print('#' * self.__size)
+        else:
+            print()
